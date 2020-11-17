@@ -1,0 +1,53 @@
+﻿<Window x:Class="WPF_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Calculator"
+        mc:Ignorable="d"
+        Title="Calculator" Height="587" Width="370">
+    <Grid Margin="0,0,2,4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Actions Commands -->
+        <Button x:Name="clear" Content="AC" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Grid.Row="1" FontSize="28" Click="clear_Click" />
+        <Button x:Name="plus_minus" Content="+/-" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Grid.Row="1" FontSize="28" Grid.Column="1" Click="plus_minus_Click"/>
+        <Button x:Name="percentage" Content="%" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Grid.Row="1" FontSize="28" Grid.Column="2" Click="percentage_Click"/>
+
+        <!-- Operations Commands -->
+        <Button x:Name="div" Content="/" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FFEC9B27" Grid.Row="1" FontSize="28" Foreground="White" Grid.Column="3" Click="Operations" />
+        <Button x:Name="multi" Content="*" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FFEC9B27" Grid.Row="2" FontSize="28" Foreground="White" Grid.Column="3" Click="Operations"/>
+        <Button x:Name="subs" Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FFEC9B27" Grid.Row="3" FontSize="28" Foreground="White" Grid.Column="3" Click="Operations"/>
+        <Button x:Name="add" Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FFEC9B27" Grid.Row="4" FontSize="28" Foreground="White" Grid.Column="3" Click="Operations"/>
+
+        <!-- Numbers -->
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="2" FontSize="28" Foreground="White" Grid.Column="0" Click="NumericValue"/>
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="2" FontSize="28" Foreground="White" Grid.Column="1" Click="NumericValue"/>
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="2" FontSize="28" Foreground="White" Grid.Column="2" Click="NumericValue"/>
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="3" FontSize="28" Foreground="White" Grid.Column="0" Click="NumericValue"/>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="3" FontSize="28" Foreground="White" Grid.Column="1" Click="NumericValue"/>
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="3" FontSize="28" Foreground="White" Grid.Column="2" Click="NumericValue"/>
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="4" FontSize="28" Foreground="White" Grid.Column="0" Click="NumericValue"/>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="4" FontSize="28" Foreground="White" Grid.Column="1" Click="NumericValue"/>
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="4" FontSize="28" Foreground="White" Grid.Column="2" Click="NumericValue"/>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="159" Height="69" Background="#FF5D5D5D" Grid.Row="5" FontSize="28" Foreground="White" Grid.ColumnSpan="2" Click="NumericValue"/>
+
+        <Button x:Name="_decimal" Content="." HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FF5D5D5D" Grid.Row="5" FontSize="28" Foreground="White" Grid.Column="2" Click="_decimal_Click"/>
+        <Button x:Name="equal" Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="69" Background="#FFEC9B27" Grid.Row="5" FontSize="28" Foreground="White" Grid.Column="3" Click="MathService"/>
+        <TextBox x:Name="txtDisplay" HorizontalAlignment="Center" Height="70" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="339" Grid.ColumnSpan="4" FontSize="48" TextAlignment="Right" BorderThickness="0"/>
+
+    </Grid>
+</Window>
